@@ -6,12 +6,14 @@ Version of the house styles written primarily for standalone front end builds. K
 - gulp outputs only what is required for the build to the build/ directory, and deletes it on rebuild.
 - CSS now only uses one stylesheet, containing media queries for tablet and mobile.
 - Directory structure is a bit cleaner.
+- Images should be put in src/static/img/
+- Anything not CSS/JS/images should go in src/static/assets/ e.g. fonts, videos, other files.
 
 
 Use of Gulp
 ------------  
 
-There is a `gulpfile.js` within this repository to make development much quicker for the house styles. All you need to do is:  
+There is a `gulpfile.js` within this repository to make development much quicker for the house styles. All you need to do is:
 * Install Node (http://nodejs.org) & Gulp (https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)  
 * Run `npm run setup`  
 This will install all the dependencies found in `package.json` (The `node_modules` folder that is generated when you run this command should be created on a case-by-case basis and not pushed to a repository), install the Bower dependencies found in `package.json` and run the local server through the `gulp` command.
