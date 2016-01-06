@@ -1,6 +1,6 @@
 var app = window.app || {};
 
-app.main = {
+app = {
 
     init: function() {
         'use strict';
@@ -121,5 +121,5 @@ app.main = {
 };
 
 $(document).ready(function() {
-    app.main.init();
+    app.init();
 });

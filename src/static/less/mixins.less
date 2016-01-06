@@ -1,4 +1,32 @@
 /* --mixins */
+
+	/* use to generate font sizes based off the default font size of 16px */
+	/* pass the size in px/pt to return a percentage e.g. .fontcalculate(26) would return a font size of 162.5% */
+	.fontcalculate(@size){
+		font-size:(@size / 16) * 100%;
+	}
+	
+	/* square aspect ratio elements */
+	.squarewrapper {
+		position: relative;
+		padding-bottom: 100%;
+		height: 0;
+		.square {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+    /* http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
+    .vertalign {
+		position: relative;
+		top: 50%;
+		.transform( translateY(-50%) );
+	}
+
 	/* border radius */
 	.border-radius(@radius: 0.3em) {
 		-webkit-border-radius: @radius;
