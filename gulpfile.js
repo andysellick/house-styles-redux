@@ -156,7 +156,6 @@ gulp.task('clean', ['clear'], function(cb) {
     $.del([basePaths.dest], cb)
 });
 
-
 /* Default task */
 gulp.task('default', ['clean'], function() {
     gulp.start('browser-sync');

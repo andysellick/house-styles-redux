@@ -117,7 +117,6 @@ app = {
             $this.closest('.popup').fadeOut();
         }
     }
-
 };
 
 $(document).ready(function() {
