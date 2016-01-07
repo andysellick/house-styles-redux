@@ -1,8 +1,9 @@
 {
   "name": "housestyles-gulp",
   "version": "0.1.0",
+  "license": "MIT",
   "description": "Gulp capabilities for house styles",
-  "author": "Ashley Firth <ashley.firth@tangentsnowball.com>",
+  "author": "Andy Sellick",
   "main": "gulpfile.js",
   "scripts": {
     "run-npm-install": "npm install",
@@ -22,11 +23,11 @@
     "gulp-bytediff": "^0.2.1",
     "gulp-cache": "^0.2.10",
     "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-jshint": "^1.11.2",
     "gulp-less": "^3.0.3",
     "gulp-load-plugins": "^1.0.0-rc.1",
-    "gulp-minify-css": "^1.2.0",
     "gulp-newer": "^0.5.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",

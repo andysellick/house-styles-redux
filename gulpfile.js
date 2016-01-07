@@ -39,6 +39,7 @@ var gulp = require('gulp'),
     copyFiles = {
         scripts: []
     };
+var cssnano = require('gulp-cssnano');
 
 /* CSS - LESS */
 function processCss(inputStream, taskType) {
@@ -50,7 +51,7 @@ function processCss(inputStream, taskType) {
         .pipe($.newer(paths.styles.dest))
         .pipe($.less({ paths: [$.path.join(__dirname, 'less', 'includes')] }))
         .pipe($.rename({suffix: '.min'}))
-        .pipe($.minifyCss({advanced: false}))
+        .pipe(cssnano())
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         //.pipe($.notify({ message: taskType + ' task complete' }));
@@ -61,14 +62,6 @@ gulp.task('styles', ['less:main']);
 gulp.task('less:main', function() {
     return processCss(gulp.src(paths.styles.src + 'styles.less'), 'Styles');
 });
-/*
-gulp.task('less:tablet', function() {
-    return processCss(gulp.src(paths.styles.src + 'styles-tablet.less'), 'Tablet styles');
-});
-gulp.task('less:mobile', function() {
-    return processCss(gulp.src(paths.styles.src + 'styles-mobile.less'), 'Mobile styles');
-});
-*/
 
 /* JS */
 gulp.task('scripts', ['scripts:moveFiles'], function() {
