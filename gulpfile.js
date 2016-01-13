@@ -91,15 +91,15 @@ gulp.task('scripts:moveFiles', function() {
 
 /* Images */
 gulp.task('images', function() {
-  return gulp.src(paths.images.src + '**/*')
+  return gulp.src(paths.images.src + '**/*',{base: paths.images.src})
     .pipe($.plumber(function(error) {
         $.util.log($.util.colors.red('Error (' + error.plugin + '): ' + error.message));
         this.emit('end');
     }))
-    .pipe($.bytediff.start())
+    //.pipe($.bytediff.start())
     .pipe($.newer(paths.images.dest))
     .pipe($.cache($.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe($.bytediff.stop())
+    //.pipe($.bytediff.stop())
     .pipe(gulp.dest(paths.images.dest))
     .pipe(browserSync.stream())
     //.pipe($.notify({ message: 'Images task complete' }));
