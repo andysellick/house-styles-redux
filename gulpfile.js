@@ -57,7 +57,6 @@ function processCss(inputStream, taskType) {
         //.pipe($.notify({ message: taskType + ' task complete' }));
 }
 
-//gulp.task('styles', ['less:main', 'less:tablet', 'less:mobile']);
 gulp.task('styles', ['less:main']);
 gulp.task('less:main', function() {
     return processCss(gulp.src(paths.styles.src + 'styles.less'), 'Styles');
@@ -96,10 +95,10 @@ gulp.task('images', function() {
         $.util.log($.util.colors.red('Error (' + error.plugin + '): ' + error.message));
         this.emit('end');
     }))
-    //.pipe($.bytediff.start())
+    //.pipe($.bytediff.start()) //seems to be causing a problem with image reprocessing in subdirs on windows
     .pipe($.newer(paths.images.dest))
     .pipe($.cache($.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    //.pipe($.bytediff.stop())
+    //.pipe($.bytediff.stop()) //seems to be causing a problem with image reprocessing in subdirs on windows
     .pipe(gulp.dest(paths.images.dest))
     .pipe(browserSync.stream())
     //.pipe($.notify({ message: 'Images task complete' }));
