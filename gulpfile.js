@@ -1,6 +1,6 @@
 var basePaths = {
     src: 'src/',
-    dest: 'build/',
+    dest: 'dist/',
     stat: 'static/'
 };
 var paths = {
@@ -126,7 +126,7 @@ gulp.task('copyAssets',function(){
 gulp.task('browser-sync', ['styles', 'scripts', 'images', 'copyHtml', 'copyAssets', 'copyBowerStuff'], function() {
     browserSync.init({
         server: {
-            baseDir: "./build/"
+            baseDir: "./dist/"
         }
         //Use if you don't want BS to open a tab in your browser when it starts up
         //open: false
