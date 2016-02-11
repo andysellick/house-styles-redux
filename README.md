@@ -3,6 +3,7 @@ House Styles Redux
 
 Version of the house styles written primarily for standalone front end builds. Key features:
 
+- browser support for IE7 dropped
 - gulp outputs only what is required for the build to the build/ directory, and deletes it on rebuild.
 - CSS now only uses one stylesheet, containing media queries for tablet and mobile.
 - Directory structure is a bit cleaner.
@@ -11,7 +12,7 @@ Version of the house styles written primarily for standalone front end builds. K
 
 
 Use of Gulp
-------------  
+------------
 
 There is a `gulpfile.js` within this repository to make development much quicker for the house styles. All you need to do is:
 * Install Node (http://nodejs.org) & Gulp (https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)  
