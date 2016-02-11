@@ -13,12 +13,6 @@
             height:@btnlineheight / 1.4;
         }
     }
-    /* Remove button padding in FF - otherwise all buttons are 2px taller than links with the same style */
-    input::-moz-focus-inner,
-    button::-moz-focus-inner {
-        border:0;
-        padding:0;
-    }
 
     .btn {
         display:inline-block;
@@ -26,7 +20,6 @@
         line-height:@btnlineheight;
         margin:0;
         .border-box();
-        border:solid 1px #AAA;
         border:0;
         background:#DDD;
         color:#666;
