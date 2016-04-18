@@ -40,6 +40,7 @@ var gulp = require('gulp'),
         scripts: []
     };
 var cssnano = require('gulp-cssnano');
+var gutil = require('gulp-util');
 
 /* CSS - LESS */
 function processCss(inputStream, taskType) {
@@ -120,6 +121,37 @@ gulp.task('copyBowerStuff',function(){
 gulp.task('copyAssets',function(){
     gulp.src([paths.assets.src + '/**/*'])
     .pipe(gulp.dest(paths.assets.dest));
+});
+
+/* optional - file generation */
+//http://stackoverflow.com/questions/23230569/how-do-you-create-a-file-from-a-string-in-gulp
+function createFile(filename, variables) {
+	var src = require('stream').Readable({ objectMode: true })
+	src._read = function () {
+		for(var f = 0; f < variables.length; f++){
+			this.push(new gutil.File({ cwd: "", base: "", path: filename.replace('XXX',f), contents: new Buffer(variables[f]) }))
+		}
+	    this.push(null)
+	}
+	return src;
+}
+//create the file content in the form of an array. In this case we take a string and replace 'VAR1' with loop number
+function generateFileVariables(numfiles,filecontent){
+	var output = [];
+	for(var i = 0; i < numfiles; i++){
+		var str = filecontent.replace(/VAR1/gi, i);
+		output.push(str);
+	}
+	return output;
+}
+
+var numfiles = 10;
+var filecontent = "This is an example of the content that could go into a file. It might contain variables that will be output automatically such as this: VAR1";
+var filevariables = generateFileVariables(numfiles,filecontent);
+
+gulp.task('generateFiles', function () {
+	return createFile("fileXXX.txt", filevariables)
+	.pipe(gulp.dest(paths.templates.dest + 'files/'))
 });
 
 /* BrowserSync */
