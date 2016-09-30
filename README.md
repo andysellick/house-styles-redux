@@ -30,7 +30,7 @@ Name | Version | Description
 --- | --- | ---
 **gulp** | ^3.9.0 | Task runner to automate various tasks
 **browser-sync** | ^2.8.0 | Local server enabling instant DOM injection to all devices connected when a file is changed
-**gulp-byetdiff | ^1.0.0 | Shows a the difference between file sizes before and after gulp tasks have run.
+**gulp-bytediff** | ^1.0.0 | Shows a the difference between file sizes before and after gulp tasks have run.
 **gulp-concat** | ^2.6.0 | Concatenates multiple files into one
 **gulp-cache** | ^0.2.10 | Enables caching of piped files to prevent tasks being run unnecessarily
 **gulp-imagemin** | ^2.3.0 | Compresses images - packaged with gifsicle, jpegtran, optipng, and svgo
