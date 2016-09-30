@@ -15,7 +15,6 @@
             opacity:0;
             .transition ( opacity 0.5s );
             .border-box();
-            .border-radius( 0 0 2px 2px );
             background:#FFFFFF;
             border:solid 1px silver;
             border-top:0;
@@ -34,21 +33,6 @@
         .btn {
             display:block;
             float:left;
-            .border-radius( 0 );
-            &:first-child {
-                .border-radius( 2px 0 0 2px );
-            }
-            + .btn {
-                .border-radius( 0 );
-            }
-            &:last-child {
-                border-top-left-radius:0;
-                border-bottom-left-radius:0;
-            }
-            &.dropdown-toggle {
-                border-top-right-radius:2px;
-                border-bottom-right-radius:2px;
-            }
             + .dropdown-toggle {
                 padding-left:4px;
                 padding-right:4px;
@@ -73,3 +57,9 @@
             }
         }
     }
+
+@media @tabletWidth{
+}
+
+@media @mobileWidth{
+}

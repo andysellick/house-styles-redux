@@ -5,6 +5,13 @@
     @white: #FFFFFF;
 
 
-	/* responsive */
-	@tabletWidth: 767px;
-	@mobileWidth: 420px;
+	/* breakpoints */
+	@tabletWidth: ~"(max-width:767px)";
+	@mobileWidth: ~"(max-width:420px)";
+
+	/* Mobile First breakpoints */
+	@mobileSmall: ~"only screen and (min-width: 320px)";
+	@mobile: ~"only screen and (min-width: 480px)";
+	@tablet: ~"only screen and (min-width: 768px)";
+	@tabletLrg: ~"only screen and (min-width: 992px)";
+	@desktop: ~"only screen and (min-width: 1200px)";
